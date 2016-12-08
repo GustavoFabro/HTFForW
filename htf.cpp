@@ -85,7 +85,7 @@ int main (){
 	printf ("%c", 220);
 	atualizarPontos(hits, fail);
 	
-	ax = 50; //desenha atirador
+	ax = 50; 
 	ay = 10;
 	gotoxy(ax, ay);
 	printf ("%c", 1);
@@ -93,15 +93,15 @@ int main (){
 	while(1){
 		while(kbhit()){
 			tecla = getch();
-			if(tecla == 72 || tecla == 119){ //subir
+			if(tecla == 72 || tecla == 119){ //up
 				subir(&x, &y);
 			}
-			if(tecla == 80 || tecla == 115){ //descer
+			if(tecla == 80 || tecla == 115){ //down
 				descer(&x, &y);
 			}		
-			if(tecla == 32){ //se atirar
+			if(tecla == 32){ //atirar
 				auxY=y;
-				for(int i=7;i<81;i++){ //tiro
+				for(int i=7;i<81;i++){
 					Sleep(vel); 
 					gotoxy(i, auxY);   
 					printf ("%c", 175);
@@ -110,10 +110,10 @@ int main (){
 							
 					if(kbhit()){
 						tecla = getch();
-						if(tecla == 72 || tecla == 119){ //subir
+						if(tecla == 72 || tecla == 119){ //up
 							subir(&x, &y);
 						}
-						if(tecla == 80 || tecla == 115){ //descer
+						if(tecla == 80 || tecla == 115){ //down
 							descer(&x, &y);
 						}		
 						if(tecla == 68 || tecla == 97){
@@ -126,7 +126,7 @@ int main (){
 					
 					}
 					
-					if(ax==i &&ay==auxY){ //se acertou alvo
+					if(ax==i &&ay==auxY){ //hit
 						mudaAlvo(&ax, &ay);
 						hits++;
 						atualizarPontos(hits, fail);
@@ -141,7 +141,7 @@ int main (){
 					}
 				}
 				vel = 20;
-				auxY=y; //recupera posição atual do eixo y
+				auxY=y; 
 				acertou = 0;
 			}		
 		}			
