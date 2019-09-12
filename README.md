@@ -1,2 +1,3 @@
 # HTFForW
-Jogo para o cmd do Windows
+
+A simple game for Windows terminal
